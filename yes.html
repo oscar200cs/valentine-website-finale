@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>I Love You ❤️</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="Style.css">
 </head>
 <body>
 
@@ -16,16 +16,15 @@
         <h1>I Love You ❤️</h1>
     </div>
     <script src="script.js"></script>
-        // FIREWORKS SCRIPT
         const canvas = document.getElementById("fireworks");
         const ctx = canvas.getContext("2d");
 
         canvas.width = window.innerWidth;
-        canvas.hight = window.innerHight;
+        canvas.height = window.innerHeight;
         canvas.style.position = "fixed";
         canvas.style.top = 0;
         canvas.style.left = 0;
-        canvas.style.zIndex = -1;
+        canvas.style.zIndex = -1; // behind the container
 
         let particles = [];
 
@@ -66,10 +65,11 @@
         animate();
         setInterval(createFirework, 2000);
 
-        window.addEventListener('resize', () =>{
+        // resize canvas on window resize
+        window.addEventListener('resize', () => {
             canvas.width = window.innerWidth;
-            canvas.hight = window.innerHight;
-         })
+            canvas.height = window.innerHeight;
+        });
     </script>
 
 </body>
